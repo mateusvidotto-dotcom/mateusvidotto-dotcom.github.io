@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Defenda Sua Fé - Guia Completo de Apologética Cristã para Iniciantes. Baixe GRÁTIS o PDF completo agora!">
     <title>DEFENDA SUA FÉ • Guia Completo de Apologética Cristã</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -12,376 +11,198 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500;700&display=swap');
         
-        :root {
-            --gold: #ffd700;
-            --dark: #0f0c29;
-            --deep: #16213e;
-        }
-        
-        * { transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
-        
         body { font-family: 'Roboto', sans-serif; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        h1, h2 { font-family: 'Playfair Display', serif; }
         
         .hero-bg {
-            background: linear-gradient(180deg, #0f0c29 0%, #16213e 40%, #1a1a2e 100%);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(180deg, #0f0c29 0%, #16213e 50%, #1a1a2e 100%);
         }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 60%);
-            animation: pulse 15s ease infinite;
-            z-index: 1;
-            pointer-events: none;
-        }
-        
-        @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
         
         .floating-book {
-            animation: floatBook 6s ease-in-out infinite;
-            filter: drop-shadow(0 35px 35px rgba(255, 215, 0, 0.5));
+            animation: floatBook 7s ease-in-out infinite;
         }
         
-        @keyframes floatBook { 0%, 100% { transform: translateY(0px) rotate(0deg); } 50% { transform: translateY(-25px) rotate(8deg); } }
+        @keyframes floatBook {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(6deg); }
+        }
         
-        .nav-link { position: relative; }
-        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -2px; left: 0; background-color: #ffd700; }
-        .nav-link:hover::after { width: 100%; }
+        .gold-glow { text-shadow: 0 0 30px #ffd700, 0 0 50px #ffd700; }
         
-        .section-header { position: relative; }
-        .section-header::after {
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+        }
+        
+        .section-title::after {
             content: '';
-            position: absolute;
+            display: block;
             width: 80px;
             height: 3px;
-            background: linear-gradient(to right, #ffd700, #b38b00);
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 9999px;
+            background: linear-gradient(to right, #ffd700, #e0c090);
+            margin: 12px auto 0;
         }
-        
-        .card-hover { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .card-hover:hover { transform: translateY(-12px) scale(1.03); box-shadow: 0 25px 50px -12px rgb(255 215 0 / 0.25); }
-        
-        .gold-glow { text-shadow: 0 0 25px #ffd700, 0 0 40px #ffd700; }
     </style>
 </head>
 <body class="bg-[#0f0c29] text-[#f0e6d2]">
 
     <!-- NAVBAR -->
     <nav class="sticky top-0 z-50 bg-[#0f0c29]/95 backdrop-blur-lg border-b border-[#ffd700]/20">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
             <div class="flex items-center gap-3">
                 <span class="text-3xl">✝️</span>
-                <h2 class="text-2xl font-bold tracking-tighter gold-glow">DEFENDA SUA FÉ</h2>
+                <h2 class="text-2xl font-bold gold-glow">DEFENDA SUA FÉ</h2>
             </div>
-            
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#apresentacao" class="nav-link">Apresentação</a>
-                <a href="#sobre" class="nav-link">Sobre o guia</a>
-                <a href="#sumario" class="nav-link">Sumário completo</a>
-                <a href="#faq" class="nav-link">Perguntas frequentes</a>
-            </div>
-            
-            <div class="flex items-center gap-4">
-                <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
-                   download
-                   class="px-8 py-3 bg-[#ffd700] hover:bg-amber-300 text-[#1a1a2e] font-bold rounded-3xl text-sm flex items-center gap-2">
-                    <span>BAIXAR GRÁTIS</span>
-                    <span class="text-xl">↓</span>
-                </a>
-                <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center border border-[#ffd700]/30 rounded-2xl text-2xl">☰</button>
-            </div>
-        </div>
-        
-        <div id="mobileMenu" class="hidden md:hidden bg-[#16213e] px-6 py-6 text-center border-t border-[#ffd700]/20">
-            <a href="#apresentacao" class="block py-3 text-lg">Apresentação</a>
-            <a href="#sobre" class="block py-3 text-lg">Sobre o guia</a>
-            <a href="#sumario" class="block py-3 text-lg">Sumário completo</a>
-            <a href="#faq" class="block py-3 text-lg">FAQ</a>
-            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
-               download class="block py-3 text-lg font-bold text-[#ffd700]">BAIXAR EBOOK GRÁTIS ↓</a>
+            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (7).pdf" 
+               download
+               onclick="downloadWithConfetti()"
+               class="px-8 py-3 bg-[#ffd700] hover:bg-amber-300 text-[#1a1a2e] font-bold rounded-3xl flex items-center gap-2 transition">
+                BAIXAR GRÁTIS ↓
+            </a>
         </div>
     </nav>
 
     <!-- HERO -->
-    <header class="hero-bg pt-16 pb-24 relative">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
-            <div class="md:col-span-7 text-center md:text-left">
-                <div class="inline-flex items-center gap-2 bg-[#ffd700]/10 text-[#ffd700] text-sm font-medium px-6 py-2 rounded-3xl mb-6">
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#ffd700] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#ffd700]"></span>
-                    </span>
-                    LANÇAMENTO 2026 • 100% GRATUITO
-                </div>
-                
-                <h1 class="text-6xl md:text-7xl leading-none font-bold gold-glow mb-6">
-                    DEFENDA SUA FÉ<br>COM PODER E VERDADE
-                </h1>
-                
-                <p class="text-2xl md:text-3xl text-[#e0c090] max-w-lg mx-auto md:mx-0">
-                    O guia completo de apologética cristã para iniciantes.<br>
-                    <strong class="text-white">112 páginas • PDF gratuito</strong>
-                </p>
-                
-                <div class="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
-                       download
-                       onclick="downloadWithConfetti()"
-                       class="px-12 py-6 bg-[#ffd700] hover:bg-amber-300 text-[#1a1a2e] font-bold text-2xl rounded-3xl flex items-center gap-4 group">
-                        BAIXAR EBOOK GRÁTIS AGORA
-                        <span class="group-active:rotate-45 text-4xl">↓</span>
-                    </a>
-                </div>
-                
-                <div class="mt-12 flex items-center justify-center md:justify-start gap-8 text-sm">
-                    <div class="flex -space-x-4">
-                        <div class="w-8 h-8 bg-[#ffd700] text-[#1a1a2e] rounded-2xl flex items-center justify-center text-xs font-bold ring-2 ring-[#16213e]">1K+</div>
-                        <div class="w-8 h-8 bg-[#ffd700] text-[#1a1a2e] rounded-2xl flex items-center justify-center text-xs font-bold ring-2 ring-[#16213e]">2K+</div>
-                        <div class="w-8 h-8 bg-[#ffd700] text-[#1a1a2e] rounded-2xl flex items-center justify-center text-xs font-bold ring-2 ring-[#16213e]">3K+</div>
-                    </div>
-                    <p class="text-[#e0c090]">Milhares de cristãos já foram formados pela apologética.</p>
-                </div>
-            </div>
+    <header class="hero-bg pt-20 pb-24 text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-6xl md:text-7xl font-bold gold-glow mb-4">DEFENDA SUA FÉ</h1>
+            <p class="text-3xl text-[#e0c090]">Guia Completo de Apologética Cristã para Iniciantes</p>
+            <p class="mt-4 text-xl text-[#e0c090]/80">112 páginas • 100% Gratuito</p>
             
-            <div class="md:col-span-5 flex justify-center">
+            <div class="my-12">
                 <img src="9166f7f3-92e9-4fd3-b7c3-9d16b84fd7c2.jpg" 
                      alt="Capa do ebook Defenda Sua Fé"
-                     class="floating-book w-80 md:w-[420px] rounded-3xl border-8 border-[#ffd700] shadow-2xl rotate-6">
+                     class="floating-book mx-auto w-80 md:w-[440px] rounded-3xl border-8 border-[#ffd700] shadow-2xl">
             </div>
+
+            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (7).pdf" 
+               download
+               onclick="downloadWithConfetti()"
+               class="inline-block px-16 py-8 bg-gradient-to-r from-[#ffd700] to-amber-300 text-[#1a1a2e] font-bold text-4xl rounded-[2.5rem] hover:scale-105 transition-all duration-300">
+                BAIXAR EBOOK GRÁTIS AGORA
+            </a>
         </div>
     </header>
 
     <!-- APRESENTAÇÃO -->
-    <section id="apresentacao" class="py-24 bg-[#16213e]">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="section-header text-5xl font-bold text-center mb-12">Apresentação Completa do Livro</h2>
-            <div class="prose prose-invert max-w-none text-[#e0c090] leading-relaxed text-lg">
-                <p class="text-xl">Ei, amigo leitor! Bem-vindo ao <strong>Defenda Sua Fé: Guia Completo de Apologética Cristã para Iniciantes</strong>.</p>
-                <p>Imagine que estamos sentados em um café aconchegante, com uma xícara de café quente na mão. Este livro foi escrito especialmente para você, independentemente da sua idade ou contexto de vida.</p>
-                <p>O propósito é claro: equipar você para defender a fé cristã com confiança, lógica e compaixão, usando razão, evidências e amor. Capítulos curtos, linguagem acessível e exemplos práticos do dia a dia.</p>
-                
-                <div class="my-12 p-8 bg-[#1a1a2e] rounded-3xl border border-[#ffd700]/30">
-                    <p class="italic text-2xl text-center">"Santifiquem a Cristo como Senhor em seu coração, estando sempre preparados para responder a qualquer um que lhes pedir a razão da esperança que vocês têm."</p>
-                    <p class="text-center text-[#e0c090] mt-4">— 1 Pedro 3:15</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- O MUNDO QUESTIONA -->
-    <section id="sobre" class="py-24 bg-[#0f0c29]">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid md:grid-cols-12 gap-16 items-center">
-                <div class="md:col-span-7">
-                    <h2 class="section-header text-5xl font-bold mb-8 text-center md:text-left">O mundo questiona. Você está preparado?</h2>
-                    <div class="space-y-8 text-lg leading-relaxed">
-                        <p class="text-[#e0c090]">Nas redes sociais, universidades, trabalho e até em conversas familiares, a fé cristã é constantemente questionada.</p>
-                        <p>Você já se sentiu sem palavras diante de perguntas como:</p>
-                        <ul class="space-y-4 text-xl">
-                            <li class="flex gap-4"><span class="text-[#ffd700] text-2xl">•</span> “A Bíblia não é só um livro de mitos?”</li>
-                            <li class="flex gap-4"><span class="text-[#ffd700] text-2xl">•</span> “Como um Deus bom permite tanto sofrimento?”</li>
-                            <li class="flex gap-4"><span class="text-[#ffd700] text-2xl">•</span> “Ciência e fé não são incompatíveis?”</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-5">
-                    <div class="bg-gradient-to-br from-[#1a1a2e] to-[#0f0c29] border border-[#ffd700]/30 rounded-3xl p-10 text-center shadow-2xl">
-                        <div class="text-[#ffd700] text-7xl mb-6">✝️</div>
-                        <p class="italic text-3xl leading-tight font-light">"Santifiquem a Cristo como Senhor em seu coração, estando sempre preparados para responder a qualquer um que lhes pedir a razão da esperança que vocês têm."</p>
-                        <p class="text-[#e0c090] mt-8 text-xl">— 1 Pedro 3:15</p>
-                    </div>
-                </div>
-            </div>
+    <section class="py-20 bg-[#16213e]">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-6 gold-glow">Milhares de cristãos já foram formados pela apologética</h2>
+            <p class="text-xl text-[#e0c090]">
+                Em um mundo cheio de dúvidas, objeções e debates, este guia prático vai te equipar para defender sua fé com confiança, 
+                lógica e amor, conforme 1 Pedro 3:15.
+            </p>
         </div>
     </section>
 
     <!-- BENEFÍCIOS -->
-    <section class="py-24 bg-[#16213e]">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="section-header text-5xl font-bold text-center mb-16">O que você vai aprender</h2>
+    <section class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 gold-glow">Por que ler este ebook?</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
-                    <div class="text-6xl mb-6">🛡️</div>
-                    <h3 class="text-3xl font-bold mb-3">Respostas prontas</h3>
-                    <p class="text-[#e0c090]">Respostas claras e amorosas para as principais objeções contra o cristianismo.</p>
+                <div class="bg-[#1a1a2e] p-8 rounded-3xl card-hover transition">
+                    <div class="text-5xl mb-4">🛡️</div>
+                    <h3 class="text-2xl font-bold mb-3">Fortaleça sua fé</h3>
+                    <p class="text-[#e0c090]">Transforme dúvidas em convicção usando argumentos lógicos, evidências históricas e filosóficas.</p>
                 </div>
-                <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
-                    <div class="text-6xl mb-6">📖</div>
-                    <h3 class="text-3xl font-bold mb-3">Estudo prático</h3>
-                    <p class="text-[#e0c090]">Exercícios, versículos e argumentos que você pode aplicar no dia a dia.</p>
+                <div class="bg-[#1a1a2e] p-8 rounded-3xl card-hover transition">
+                    <div class="text-5xl mb-4">💬</div>
+                    <h3 class="text-2xl font-bold mb-3">Responda com confiança</h3>
+                    <p class="text-[#e0c090]">Aprenda respostas claras para as principais objeções: existência de Deus, problema do mal, confiabilidade da Bíblia e muito mais.</p>
                 </div>
-                <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
-                    <div class="text-6xl mb-6">🔥</div>
-                    <h3 class="text-3xl font-bold mb-3">Confiança restaurada</h3>
-                    <p class="text-[#e0c090]">Saia da defensiva e torne-se um embaixador de Cristo com ousadia e sabedoria.</p>
+                <div class="bg-[#1a1a2e] p-8 rounded-3xl card-hover transition">
+                    <div class="text-5xl mb-4">❤️</div>
+                    <h3 class="text-2xl font-bold mb-3">Com amor e respeito</h3>
+                    <p class="text-[#e0c090]">Não é sobre brigar, mas sobre defender a fé com mansidão e respeito, como ensina a Bíblia.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SUMÁRIO -->
-    <section id="sumario" class="py-24 bg-[#0f0c29]">
+    <!-- SUMÁRIO DETALHADO -->
+    <section class="py-20 bg-[#16213e]">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="section-header text-5xl font-bold text-center mb-16">Sumário Completo</h2>
-            <div class="grid md:grid-cols-2 gap-x-16 gap-y-6 text-lg">
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">01</span><div><strong>Capítulo Um</strong><br>Fundamentos da Apologética Cristã</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">02</span><div><strong>Capítulo Dois</strong><br>Provando a Existência de Deus</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">03</span><div><strong>Capítulo Três</strong><br>Argumentos Filosóficos para Deus</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">04</span><div><strong>Capítulo Quatro</strong><br>O Problema do Mal e do Sofrimento</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">05</span><div><strong>Capítulo Cinco</strong><br>As Evidências Históricas de Jesus Cristo</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">06</span><div><strong>Capítulo Seis</strong><br>Evolução versus Criacionismo</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">07</span><div><strong>Capítulo Sete</strong><br>A Bíblia é Confiável</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">08</span><div><strong>Capítulo Oito</strong><br>Moralidade e Ética</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">EXTRA</span><div><strong>Capítulo Extra</strong><br>Temas Polêmicos</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">09</span><div><strong>Capítulo Nove</strong><br>Experiências Pessoais</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">10</span><div><strong>Capítulo Dez</strong><br>Apologética no Mundo Digital</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">11</span><div><strong>Capítulo Onze</strong><br>Aplicação na Vida Real</div></div>
-                <div class="flex gap-6"><span class="font-mono text-[#ffd700] text-3xl">12</span><div><strong>Capítulo Doze</strong><br>Dúvidas Pessoais</div></div>
+            <h2 class="text-4xl font-bold text-center mb-12 gold-glow">Sumário</h2>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-8 text-lg">
+                <div><strong>Capítulo 1:</strong> Fundamentos da Apologética Cristã</div>
+                <div><strong>Capítulo 2:</strong> Provando a Existência de Deus</div>
+                <div><strong>Capítulo 3:</strong> Argumentos Filosóficos para Deus</div>
+                <div><strong>Capítulo 4:</strong> O Problema do Mal e do Sofrimento</div>
+                <div><strong>Capítulo 5:</strong> As Evidências Históricas de Jesus Cristo</div>
+                <div><strong>Capítulo 6:</strong> Evolução versus Criacionismo</div>
+                <div><strong>Capítulo 7:</strong> A Bíblia é Confiável</div>
+                <div><strong>Capítulo 8:</strong> Moralidade e Ética</div>
+                <div><strong>Capítulo Extra:</strong> Temas Polêmicos</div>
+                <div><strong>Capítulo 9:</strong> Experiências Pessoais</div>
+                <div><strong>Capítulo 10:</strong> Apologética no Mundo Digital</div>
+                <div><strong>Capítulo 11:</strong> Aplicação na Vida Real</div>
+                <div><strong>Capítulo 12:</strong> Dúvidas Pessoais</div>
             </div>
+            <p class="text-center mt-12 text-[#e0c090]">+ Introdução, exercícios, estudos de caso, nuances culturais e muito mais.</p>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="py-24 bg-[#16213e]">
+    <section class="py-20">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="section-header text-5xl font-bold text-center mb-16">Perguntas Frequentes</h2>
+            <h2 class="text-4xl font-bold text-center mb-12 gold-glow">Perguntas Frequentes</h2>
             <div class="space-y-6">
-                <div onclick="toggleFaq(this)" class="faq-item bg-[#1f1f2e] rounded-3xl p-8 cursor-pointer">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl font-semibold">O ebook é compatível com Kindle?</p>
-                        <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
-                    </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O arquivo foi criado no Kindle Create e está otimizado para Kindle, celular, tablet e computador.</div>
+                <div class="bg-[#1a1a2e] p-6 rounded-3xl">
+                    <p class="font-bold mb-2">Este ebook é realmente gratuito?</p>
+                    <p class="text-[#e0c090]">Sim! 100% gratuito. Basta baixar e ler.</p>
                 </div>
-                <div onclick="toggleFaq(this)" class="faq-item bg-[#1f1f2e] rounded-3xl p-8 cursor-pointer">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl font-semibold">Quanto tempo leva para ler?</p>
-                        <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
-                    </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Em média 4 a 6 horas. Capítulos curtos ideais para ler em pausas diárias.</div>
+                <div class="bg-[#1a1a2e] p-6 rounded-3xl">
+                    <p class="font-bold mb-2">Preciso de conhecimento avançado?</p>
+                    <p class="text-[#e0c090]">Não. O conteúdo foi feito especialmente para iniciantes, com linguagem simples e exemplos do dia a dia.</p>
                 </div>
-                <div onclick="toggleFaq(this)" class="faq-item bg-[#1f1f2e] rounded-3xl p-8 cursor-pointer">
-                    <div class="flex justify-between items-center">
-                        <p class="text-xl font-semibold">Posso compartilhar com minha igreja?</p>
-                        <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
-                    </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O ebook é gratuito e você pode compartilhar livremente.</div>
+                <div class="bg-[#1a1a2e] p-6 rounded-3xl">
+                    <p class="font-bold mb-2">Posso ler no celular ou Kindle?</p>
+                    <p class="text-[#e0c090]">Sim. O PDF é otimizado para todos os dispositivos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ÚLTIMO CTA -->
-    <section class="py-32 bg-gradient-to-b from-[#16213e] to-[#0f0c29] text-center">
-        <div class="max-w-2xl mx-auto px-6">
-            <h2 class="text-6xl font-bold mb-8">Não deixe sua fé ser silenciada.</h2>
-            <p class="text-2xl text-[#e0c090] mb-12">Baixe agora o ebook completo e comece hoje mesmo a defender o Evangelho com poder.</p>
-            
-            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
+    <!-- CTA FINAL -->
+    <section class="py-24 text-center bg-gradient-to-b from-[#16213e] to-[#0f0c29]">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-5xl font-bold mb-6">Pronto para fortalecer sua fé?</h2>
+            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (7).pdf" 
                download
                onclick="downloadWithConfetti()"
-               class="group px-16 py-8 text-4xl font-bold bg-gradient-to-r from-[#ffd700] to-amber-300 text-[#1a1a2e] rounded-[2.5rem] flex items-center gap-6 mx-auto hover:scale-110">
-                BAIXAR GRÁTIS (PDF 112 páginas)
-                <span class="text-5xl group-active:rotate-45">↓</span>
+               class="inline-block px-16 py-8 bg-gradient-to-r from-[#ffd700] to-amber-300 text-[#1a1a2e] font-bold text-4xl rounded-[2.5rem] hover:scale-110 transition-all">
+                BAIXAR EBOOK GRÁTIS (112 páginas)
             </a>
-            
-            <p class="text-xs mt-8 text-[#e0c090]/70">Acesso imediato • Compartilhável • Feito com amor para a Igreja</p>
         </div>
     </section>
 
-<!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="bg-black py-16 text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center gap-10 text-[#e0c090] mb-12">
-                <a href="https://youtube.com/@omateusvidotto?si=S3JKn2qI6Fm-uagk" target="_blank" class="hover:text-[#ffd700]">YouTube</a>
-                <a href="https://www.instagram.com/mateus_vidotto/" target="_blank" class="hover:text-[#ffd700]">Instagram</a>
-            </div>
-            <p class="text-2xl mb-3">✝️ Viva Cristo Rei ✝️</p>
-            <p class="text-sm opacity-60">© 2026 • Ebook 100% gratuito • Feito com amor e oração para a Igreja de Jesus</p>
+        <div class="flex justify-center gap-12 text-[#e0c090] text-lg mb-10">
+            <a href="https://youtube.com/@omateusvidotto?si=S3JKn2qI6Fm-uagk" target="_blank" class="hover:text-[#ffd700]">YouTube</a>
+            <a href="https://www.instagram.com/mateus_vidotto/" target="_blank" class="hover:text-[#ffd700]">Instagram</a>
         </div>
+        <p class="text-3xl mb-4">✝️ Viva Cristo Rei ✝️</p>
+        <p class="text-sm opacity-60">Ebook 100% gratuito • Feito com amor e oração para a Igreja de Jesus Cristo</p>
     </footer>
 
     <script>
-        function init() {
-            window.toggleFaq = function(el) {
-                const answer = el.querySelector('.faq-answer');
-                const icon = el.querySelector('.faq-icon');
-                answer.classList.toggle('hidden');
-                icon.textContent = answer.classList.contains('hidden') ? '↓' : '↑';
-            }
-        }
-        
-        function toggleMobileMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
-        }
-        
         function downloadWithConfetti() {
-            const colors = ['#ffd700', '#e0c090', '#ffffff'];
+            const colors = ['#ffd700', '#ffed9e', '#ffffff', '#e0c090'];
             let count = 0;
             const interval = setInterval(() => {
-                if (count > 80) { clearInterval(interval); return; }
-                count++;
-                confetti({ particleCount: 12, spread: 70, origin: { y: 0.6 }, colors });
-            }, 18);
+                if (count++ > 100) { clearInterval(interval); return; }
+                confetti({ particleCount: 20, spread: 90, origin: { y: 0.6 }, colors });
+            }, 25);
             
             setTimeout(() => {
-                alert('🎉 Parabéns! Seu ebook gratuito foi baixado com sucesso.\nAbra o PDF e comece a defender sua fé agora!');
+                alert('🎉 Download iniciado com sucesso!\n\nO ebook Defenda Sua Fé (112 páginas) foi baixado.\nQue Deus te abençoe na leitura!');
             }, 1200);
         }
-        
-        function confetti(options) {
-            const canvas = document.createElement('canvas');
-            canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;';
-            document.body.appendChild(canvas);
-            const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            
-            const particles = [];
-            for (let i = 0; i < options.particleCount; i++) {
-                particles.push({
-                    x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height * 0.6,
-                    r: Math.random() * 8 + 4,
-                    d: Math.random() * 70 + 10,
-                    color: options.colors[Math.floor(Math.random() * options.colors.length)],
-                    tilt: Math.random() * 10 - 5,
-                    tiltAngle: 0,
-                    tiltAngleIncrement: Math.random() * 0.1 + 0.05
-                });
-            }
-            
-            function draw() {
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, i) => {
-                    ctx.beginPath();
-                    ctx.fillStyle = p.color;
-                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-                    ctx.fill();
-                    
-                    p.y += p.d / 8;
-                    p.tiltAngle += p.tiltAngleIncrement;
-                    p.x += Math.sin(p.tiltAngle) * 2;
-                    
-                    if (p.y > canvas.height) particles.splice(i, 1);
-                });
-                
-                if (particles.length > 0) requestAnimationFrame(draw);
-                else canvas.remove();
-            }
-            draw();
+
+        function confetti(opts) {
+            console.log('🎉 Confetti!');
         }
-        
-        window.onload = init;
     </script>
 </body>
 </html>
