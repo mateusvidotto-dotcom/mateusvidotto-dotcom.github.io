@@ -18,7 +18,7 @@
             --deep: #16213e;
         }
         
-        * { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        * { transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1); }
         
         body { font-family: 'Roboto', sans-serif; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
@@ -32,7 +32,7 @@
         .hero-bg::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            inset: 0;
             background: radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
                         radial-gradient(circle at 70% 80%, rgba(255, 215, 0, 0.12) 0%, transparent 60%);
             animation: pulse 15s ease infinite;
@@ -90,7 +90,7 @@
             </div>
             
             <div class="flex items-center gap-4">
-                <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (4).pdf" 
+                <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
                    download
                    class="px-8 py-3 bg-[#ffd700] hover:bg-amber-300 text-[#1a1a2e] font-bold rounded-3xl text-sm flex items-center gap-2">
                     <span>BAIXAR GRÁTIS</span>
@@ -100,13 +100,12 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-[#16213e] px-6 py-6 text-center border-t border-[#ffd700]/20">
             <a href="#apresentacao" class="block py-3 text-lg">Apresentação</a>
             <a href="#sobre" class="block py-3 text-lg">Sobre o guia</a>
             <a href="#sumario" class="block py-3 text-lg">Sumário completo</a>
             <a href="#faq" class="block py-3 text-lg">FAQ</a>
-            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (4).pdf" 
+            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
                download class="block py-3 text-lg font-bold text-[#ffd700]">BAIXAR EBOOK GRÁTIS ↓</a>
         </div>
     </nav>
@@ -129,13 +128,13 @@
                 
                 <p class="text-2xl md:text-3xl text-[#e0c090] max-w-lg mx-auto md:mx-0">
                     O guia completo de apologética cristã para iniciantes.<br>
-                    <strong class="text-white">111 páginas • PDF gratuito</strong>
+                    <strong class="text-white">112 páginas • PDF gratuito</strong>
                 </p>
                 
                 <div class="mt-10 flex flex-wrap gap-4 justify-center md:justify-start">
-                    <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (4).pdf" 
+                    <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
                        download
-                       onclick="buyNowWithConfetti()"
+                       onclick="downloadWithConfetti()"
                        class="px-12 py-6 bg-[#ffd700] hover:bg-amber-300 text-[#1a1a2e] font-bold text-2xl rounded-3xl flex items-center gap-4 group">
                         BAIXAR EBOOK GRÁTIS AGORA
                         <span class="group-active:rotate-45 text-4xl">↓</span>
@@ -166,12 +165,11 @@
             <h2 class="section-header text-5xl font-bold text-center mb-12">Apresentação Completa do Livro</h2>
             <div class="prose prose-invert max-w-none text-[#e0c090] leading-relaxed text-lg">
                 <p class="text-xl">Ei, amigo leitor! Bem-vindo ao <strong>Defenda Sua Fé: Guia Completo de Apologética Cristã para Iniciantes</strong>.</p>
-                <p>Imagine que estamos sentados em um café aconchegante, com uma xícara de café quente na mão. Este livro foi escrito especialmente para você — não importa se você tem 13 anos e está cheio de perguntas, 25 anos equilibrando faculdade e amigos céticos, é um profissional ocupado ou um idoso de 70 anos refletindo sobre a vida.</p>
-                <p>O propósito é simples e poderoso: equipar você para defender a fé cristã de forma confiante, lógica e cheia de compaixão, sem precisar de conhecimento avançado.</p>
-                <p>Capítulos curtos, linguagem simples, exemplos do dia a dia e um pouquinho de humor para descontrair.</p>
+                <p>Imagine que estamos sentados em um café aconchegante, com uma xícara de café quente na mão. Este livro foi escrito especialmente para você, independentemente da sua idade ou contexto de vida.</p>
+                <p>O propósito é claro: equipar você para defender a fé cristã com confiança, lógica e compaixão, usando razão, evidências e amor. Capítulos curtos, linguagem acessível e exemplos práticos do dia a dia.</p>
                 
                 <div class="my-12 p-8 bg-[#1a1a2e] rounded-3xl border border-[#ffd700]/30">
-                    <p class="italic text-2xl text-center">"Antes, santifiquem a Cristo como Senhor em seu coração, estando sempre preparados para responder a qualquer um que lhes pedir a razão da esperança que vocês têm."</p>
+                    <p class="italic text-2xl text-center">"Santifiquem a Cristo como Senhor em seu coração, estando sempre preparados para responder a qualquer um que lhes pedir a razão da esperança que vocês têm."</p>
                     <p class="text-center text-[#e0c090] mt-4">— 1 Pedro 3:15</p>
                 </div>
             </div>
@@ -185,8 +183,8 @@
                 <div class="md:col-span-7">
                     <h2 class="section-header text-5xl font-bold mb-8 text-center md:text-left">O mundo questiona. Você está preparado?</h2>
                     <div class="space-y-8 text-lg leading-relaxed">
-                        <p class="text-[#e0c090]">Nas redes, na faculdade, no trabalho e até dentro da própria igreja, a fé cristã é atacada todos os dias.</p>
-                        <p>Você já ficou sem palavras quando alguém perguntou:</p>
+                        <p class="text-[#e0c090]">Nas redes sociais, universidades, trabalho e até em conversas familiares, a fé cristã é constantemente questionada.</p>
+                        <p>Você já se sentiu sem palavras diante de perguntas como:</p>
                         <ul class="space-y-4 text-xl">
                             <li class="flex gap-4"><span class="text-[#ffd700] text-2xl">•</span> “A Bíblia não é só um livro de mitos?”</li>
                             <li class="flex gap-4"><span class="text-[#ffd700] text-2xl">•</span> “Como um Deus bom permite tanto sofrimento?”</li>
@@ -200,8 +198,6 @@
                         <div class="text-[#ffd700] text-7xl mb-6">✝️</div>
                         <p class="italic text-3xl leading-tight font-light">"Santifiquem a Cristo como Senhor em seu coração, estando sempre preparados para responder a qualquer um que lhes pedir a razão da esperança que vocês têm."</p>
                         <p class="text-[#e0c090] mt-8 text-xl">— 1 Pedro 3:15</p>
-                        <div class="h-px bg-gradient-to-r from-transparent via-[#ffd700] to-transparent my-8"></div>
-                        <p class="text-sm uppercase tracking-widest">Deus não quer que você fique em silêncio.</p>
                     </div>
                 </div>
             </div>
@@ -216,17 +212,17 @@
                 <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
                     <div class="text-6xl mb-6">🛡️</div>
                     <h3 class="text-3xl font-bold mb-3">Respostas prontas</h3>
-                    <p class="text-[#e0c090]">20 das maiores objeções contra o cristianismo respondidas com clareza, lógica e amor.</p>
+                    <p class="text-[#e0c090]">Respostas claras e amorosas para as principais objeções contra o cristianismo.</p>
                 </div>
                 <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
                     <div class="text-6xl mb-6">📖</div>
                     <h3 class="text-3xl font-bold mb-3">Estudo prático</h3>
-                    <p class="text-[#e0c090]">Exercícios, versículos memorizados e argumentos que você pode usar no dia a dia.</p>
+                    <p class="text-[#e0c090]">Exercícios, versículos e argumentos que você pode aplicar no dia a dia.</p>
                 </div>
                 <div class="card-hover bg-gradient-to-br from-[#1f1f2e] to-[#16213e] p-8 rounded-3xl border border-[#ffd700]/10">
                     <div class="text-6xl mb-6">🔥</div>
                     <h3 class="text-3xl font-bold mb-3">Confiança restaurada</h3>
-                    <p class="text-[#e0c090]">Saia da defensiva e passe a ser um embaixador de Cristo com ousadia e sabedoria.</p>
+                    <p class="text-[#e0c090]">Saia da defensiva e torne-se um embaixador de Cristo com ousadia e sabedoria.</p>
                 </div>
             </div>
         </div>
@@ -264,21 +260,21 @@
                         <p class="text-xl font-semibold">O ebook é compatível com Kindle?</p>
                         <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
                     </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O arquivo foi criado especialmente no Kindle Create e está otimizado para Kindle, celular, tablet e computador.</div>
+                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O arquivo foi criado no Kindle Create e está otimizado para Kindle, celular, tablet e computador.</div>
                 </div>
                 <div onclick="toggleFaq(this)" class="faq-item bg-[#1f1f2e] rounded-3xl p-8 cursor-pointer">
                     <div class="flex justify-between items-center">
                         <p class="text-xl font-semibold">Quanto tempo leva para ler?</p>
                         <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
                     </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Em média 4 a 6 horas. Você pode ler em capítulos curtos de 15-20 minutos por dia.</div>
+                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Em média 4 a 6 horas. Capítulos curtos ideais para ler em pausas diárias.</div>
                 </div>
                 <div onclick="toggleFaq(this)" class="faq-item bg-[#1f1f2e] rounded-3xl p-8 cursor-pointer">
                     <div class="flex justify-between items-center">
                         <p class="text-xl font-semibold">Posso compartilhar com minha igreja?</p>
                         <span class="text-4xl text-[#ffd700] faq-icon">↓</span>
                     </div>
-                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O ebook é 100% gratuito e você pode compartilhar com quantas pessoas quiser.</div>
+                    <div class="faq-answer hidden mt-6 text-[#e0c090]">Sim! O ebook é gratuito e você pode compartilhar livremente.</div>
                 </div>
             </div>
         </div>
@@ -290,11 +286,11 @@
             <h2 class="text-6xl font-bold mb-8">Não deixe sua fé ser silenciada.</h2>
             <p class="text-2xl text-[#e0c090] mb-12">Baixe agora o ebook completo e comece hoje mesmo a defender o Evangelho com poder.</p>
             
-            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (4).pdf" 
+            <a href="E-BOOK Defenda sua fé- Guia completo de Apologética Cristã para iniciantes (6).pdf" 
                download
-               onclick="buyNowWithConfetti()"
+               onclick="downloadWithConfetti()"
                class="group px-16 py-8 text-4xl font-bold bg-gradient-to-r from-[#ffd700] to-amber-300 text-[#1a1a2e] rounded-[2.5rem] flex items-center gap-6 mx-auto hover:scale-110">
-                BAIXAR GRÁTIS (PDF 111 páginas)
+                BAIXAR GRÁTIS (PDF 112 páginas)
                 <span class="text-5xl group-active:rotate-45">↓</span>
             </a>
             
@@ -302,10 +298,10 @@
         </div>
     </section>
 
-<!-- FOOTER - APENAS YOUTUBE E INSTAGRAM -->
+<!-- FOOTER -->
     <footer class="bg-black py-16 text-center">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-wrap justify-center gap-8 text-[#e0c090] mb-12">
+            <div class="flex flex-wrap justify-center gap-10 text-[#e0c090] mb-12">
                 <a href="https://youtube.com/@omateusvidotto?si=S3JKn2qI6Fm-uagk" target="_blank" class="hover:text-[#ffd700]">YouTube</a>
                 <a href="https://www.instagram.com/mateus_vidotto/" target="_blank" class="hover:text-[#ffd700]">Instagram</a>
             </div>
@@ -322,22 +318,21 @@
                 answer.classList.toggle('hidden');
                 icon.textContent = answer.classList.contains('hidden') ? '↓' : '↑';
             }
-            console.log('%c✅ Landing page atualizada - Ebook GRATUITO + Links YouTube e Instagram', 'color:#ffd700; font-size:13px; font-family:monospace');
         }
         
         function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
+            document.getElementById('mobileMenu').classList.toggle('hidden');
         }
         
-        function buyNowWithConfetti() {
+        function downloadWithConfetti() {
             const colors = ['#ffd700', '#e0c090', '#ffffff'];
             let count = 0;
             const interval = setInterval(() => {
                 if (count > 80) { clearInterval(interval); return; }
                 count++;
-                confetti({ particleCount: 12, spread: 70, origin: { y: 0.6 }, colors: colors, shapes: ['circle'], ticks: 300 });
+                confetti({ particleCount: 12, spread: 70, origin: { y: 0.6 }, colors });
             }, 18);
+            
             setTimeout(() => {
                 alert('🎉 Parabéns! Seu ebook gratuito foi baixado com sucesso.\nAbra o PDF e comece a defender sua fé agora!');
             }, 1200);
@@ -345,25 +340,26 @@
         
         function confetti(options) {
             const canvas = document.createElement('canvas');
-            canvas.style.position = 'fixed'; canvas.style.top = '0'; canvas.style.left = '0';
-            canvas.style.width = '100%'; canvas.style.height = '100%';
-            canvas.style.pointerEvents = 'none'; canvas.style.zIndex = '99999';
+            canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99999;';
             document.body.appendChild(canvas);
             const ctx = canvas.getContext('2d');
-            canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
             const particles = [];
             for (let i = 0; i < options.particleCount; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
-                    y: Math.random() * canvas.height * options.origin.y,
+                    y: Math.random() * canvas.height * 0.6,
                     r: Math.random() * 8 + 4,
-                    d: Math.random() * options.spread + 10,
+                    d: Math.random() * 70 + 10,
                     color: options.colors[Math.floor(Math.random() * options.colors.length)],
                     tilt: Math.random() * 10 - 5,
                     tiltAngle: 0,
                     tiltAngleIncrement: Math.random() * 0.1 + 0.05
                 });
             }
+            
             function draw() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 particles.forEach((p, i) => {
@@ -371,11 +367,14 @@
                     ctx.fillStyle = p.color;
                     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
                     ctx.fill();
+                    
                     p.y += p.d / 8;
                     p.tiltAngle += p.tiltAngleIncrement;
                     p.x += Math.sin(p.tiltAngle) * 2;
+                    
                     if (p.y > canvas.height) particles.splice(i, 1);
                 });
+                
                 if (particles.length > 0) requestAnimationFrame(draw);
                 else canvas.remove();
             }
